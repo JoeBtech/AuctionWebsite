@@ -88,3 +88,4 @@ C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\CoderCa
 C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.csprojResolveAssemblyReference.cache
 C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.SeedingData.resources
 C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.FormUpdate.resources
+C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.FormUpdate1.resources

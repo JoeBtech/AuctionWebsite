@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Auction.Models {
-   public class AuctionItem {
+    public class AuctionItem {
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,6 +13,9 @@ namespace Auction.Models {
         public int NumOfBids { get; set; }
         public decimal MinBid { get; set; }
         public decimal CurrentBid { get; set; }
-        
+
+        public AuctionItem() {
+            this.NumOfBids = 0;
+        }
     }
 }

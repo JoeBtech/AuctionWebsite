@@ -46,9 +46,18 @@
     export class ItemDetailsController {
         public itemToBid;
         public userBid;
-        public save(userBid) {
+        public maxBidReached() {
+            if (this.itemToBid.numOfBids < 5) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        public save(userBid) {            
             //debugger;
             if (this.itemToBid.currentBid < this.userBid && this.userBid > this.itemToBid.minBid) {
+                this.itemToBid.numOfBids++;
                 this.itemToBid.currentBid = this.userBid;
                 this.auctionService.save(this.itemToBid)
                     .then(() => { this.$location.path('/itemDetails/' + this.itemToBid.id) });

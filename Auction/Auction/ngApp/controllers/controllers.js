@@ -51,10 +51,19 @@ var MyApp;
                 this.itemToBid = auctionService.get($routeParams['id']);
                 //this.auctionItems = this.auctionService.listItems();
             }
+            ItemDetailsController.prototype.maxBidReached = function () {
+                if (this.itemToBid.numOfBids < 5) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            };
             ItemDetailsController.prototype.save = function (userBid) {
                 var _this = this;
                 //debugger;
                 if (this.itemToBid.currentBid < this.userBid && this.userBid > this.itemToBid.minBid) {
+                    this.itemToBid.numOfBids++;
                     this.itemToBid.currentBid = this.userBid;
                     this.auctionService.save(this.itemToBid)
                         .then(function () { _this.$location.path('/itemDetails/' + _this.itemToBid.id); });

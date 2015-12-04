@@ -7,8 +7,9 @@
     </li>
 </ul>
 
-<div>
+<div ng-show="!controller.maxBidReached()">
     <form ng-submit="controller.save()">
+        <input type="text" value="Your Name" />
         <label>
             Your Bid:
         </label>
