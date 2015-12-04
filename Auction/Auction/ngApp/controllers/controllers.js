@@ -44,19 +44,29 @@ var MyApp;
         })();
         Controllers.EditPageController = EditPageController;
         var ItemDetailsController = (function () {
-            function ItemDetailsController(auctionService, $location, $routeParams) {
+            function ItemDetailsController(auctionService, $location, $routeParams, accountService) {
                 this.auctionService = auctionService;
                 this.$location = $location;
                 this.$routeParams = $routeParams;
+                this.accountService = accountService;
                 this.itemToBid = auctionService.get($routeParams['id']);
                 //this.auctionItems = this.auctionService.listItems();
             }
+            ItemDetailsController.prototype.canBidPastMax = function () {
+                return this.accountService.getClaim('CanBidPastMax');
+            };
             ItemDetailsController.prototype.maxBidReached = function () {
-                if (this.itemToBid.numOfBids < 5) {
+                //debugger;
+                if (this.canBidPastMax()) {
                     return false;
                 }
                 else {
-                    return true;
+                    if (this.itemToBid.numOfBids < 5) {
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
                 }
             };
             ItemDetailsController.prototype.save = function (userBid) {

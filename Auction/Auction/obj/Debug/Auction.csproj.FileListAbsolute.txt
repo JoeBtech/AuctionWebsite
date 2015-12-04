@@ -89,3 +89,5 @@ C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction
 C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.SeedingData.resources
 C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.FormUpdate.resources
 C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.FormUpdate1.resources
+C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.Claims.resources
+C:\Users\joe\Desktop\.git\AuctionWebsiteGrpPrj\Auction\Auction\obj\Debug\Auction.Migrations.Users.resources

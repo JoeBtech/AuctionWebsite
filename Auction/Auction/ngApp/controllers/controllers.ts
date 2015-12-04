@@ -46,11 +46,20 @@
     export class ItemDetailsController {
         public itemToBid;
         public userBid;
+        public canBidPastMax() {
+          return this.accountService.getClaim('CanBidPastMax');
+        }
+
         public maxBidReached() {
-            if (this.itemToBid.numOfBids < 5) {
+            //debugger;
+            if (this.canBidPastMax()) {
                 return false;
             } else {
-                return true;
+                if (this.itemToBid.numOfBids < 5) {
+                    return false;
+                } else {
+                    return true;
+                }
             }
         }
 
@@ -62,14 +71,15 @@
                 this.auctionService.save(this.itemToBid)
                     .then(() => { this.$location.path('/itemDetails/' + this.itemToBid.id) });
             } else {
-            alert("Bid too low");
+                alert("Bid too low");
 
             }
         }
         constructor(
             private auctionService: MyApp.Services.AuctionService,
             private $location: angular.ILocationService,
-            private $routeParams: ng.route.IRouteParamsService
+            private $routeParams: ng.route.IRouteParamsService,
+            private accountService: MyApp.Services.AccountService
         ) {
             this.itemToBid = auctionService.get($routeParams['id']);
             //this.auctionItems = this.auctionService.listItems();

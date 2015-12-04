@@ -1,10 +1,13 @@
 namespace Auction.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Security.Claims;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Auction.Models.ApplicationDbContext>
     {
@@ -35,6 +38,21 @@ namespace Auction.Migrations
                 }                
             };
             context.AuctionItems.AddOrUpdate(abox => abox.Name, items);
-        }
+
+            var userStore = new UserStore<ApplicationUser>(context);
+            var userManager = new ApplicationUserManager(userStore);
+            var user = userManager.FindByName("batman@batcave.com");
+
+            if (user == null) {
+                user = new ApplicationUser {
+                    UserName = "batman@batcave.com",
+                    Email = "batman@batcave.com"
+                };
+                userManager.Create(user, "Secret123!");
+                userManager.AddClaim(user.Id, new Claim("CanBidPastMax", "true"));
+            }
+
+        }    
+
     }
 }

@@ -251,6 +251,14 @@
     <Compile Include="Migrations\201512042240251_FormUpdate1.Designer.cs">
       <DependentUpon>201512042240251_FormUpdate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512042313285_Claims.cs" />
+    <Compile Include="Migrations\201512042313285_Claims.Designer.cs">
+      <DependentUpon>201512042313285_Claims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512042339404_Users.cs" />
+    <Compile Include="Migrations\201512042339404_Users.Designer.cs">
+      <DependentUpon>201512042339404_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -384,6 +392,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512042240251_FormUpdate1.resx">
       <DependentUpon>201512042240251_FormUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512042313285_Claims.resx">
+      <DependentUpon>201512042313285_Claims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512042339404_Users.resx">
+      <DependentUpon>201512042339404_Users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

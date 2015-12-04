@@ -20,6 +20,7 @@ var MyApp;
                 }
             };
             AccountService.prototype.getClaim = function (type) {
+                debugger;
                 return this.$window.sessionStorage.getItem('claim_' + type);
             };
             AccountService.prototype.login = function (loginUser) {
