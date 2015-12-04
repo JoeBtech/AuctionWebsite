@@ -2,17 +2,20 @@ var MyApp;
 (function (MyApp) {
     var Services;
     (function (Services) {
-        var MovieService = (function () {
-            function MovieService($resource) {
-                this.MovieResource = $resource('/api/movies/:id');
+        var AuctionService = (function () {
+            function AuctionService($resource) {
+                this.AuctionResource = $resource('/api/auctionItems/:id');
             }
-            MovieService.prototype.listMovies = function () {
-                return this.MovieResource.query();
+            AuctionService.prototype.listItems = function () {
+                return this.AuctionResource.query();
             };
-            return MovieService;
+            AuctionService.prototype.get = function (id) {
+                return this.AuctionResource.get({ id: id });
+            };
+            return AuctionService;
         })();
-        Services.MovieService = MovieService;
-        angular.module('MyApp').service('movieService', MovieService);
+        Services.AuctionService = AuctionService;
+        angular.module('MyApp').service('auctionService', AuctionService);
     })(Services = MyApp.Services || (MyApp.Services = {}));
 })(MyApp || (MyApp = {}));
 //# sourceMappingURL=services.js.map

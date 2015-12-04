@@ -37,6 +37,27 @@
                 controller: MyApp.Controllers.ConfirmEmailController,
                 controllerAs: 'controller'
             })
+            .when('/addPage', {
+                templateUrl: '/ngApp/views/addPage.html',
+                controller: MyApp.Controllers.AddPageController,
+                controllerAs: 'controller'
+            })
+            .when('/editPage', {
+                templateUrl: '/ngApp/views/editPage.html',
+                controller: MyApp.Controllers.EditPageController,
+                controllerAs: 'controller'
+            })
+            .when('/deletePage', {
+                templateUrl: '/ngApp/views/deletePage.html',
+                controller: MyApp.Controllers.DeletePageController,
+                controllerAs: 'controller'
+            })
+            .when('/itemDetails', {
+                templateUrl: '/ngApp/views/itemDetails.html',
+                controller: MyApp.Controllers.ItemDetailsController,
+                controllerAs: 'controller'
+            })
+
             .otherwise({
                 redirectTo: '/ngApp/views/notFound.html'
             });

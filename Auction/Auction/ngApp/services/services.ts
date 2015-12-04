@@ -1,17 +1,22 @@
 ﻿namespace MyApp.Services {
 
-    export class MovieService {
-        private MovieResource;
+    export class AuctionService {
+        private AuctionResource;
 
-        public listMovies() {
-            return this.MovieResource.query();
+        public listItems() {
+            return this.AuctionResource.query();
         }
 
+        public get(id: number) {
+            return this.AuctionResource.get({id:id});
+        }
+
+
         constructor($resource: angular.resource.IResourceService) {
-            this.MovieResource = $resource('/api/movies/:id');
+            this.AuctionResource = $resource('/api/auctionItems/:id');
         }
     }
 
-    angular.module('MyApp').service('movieService', MovieService);
+    angular.module('MyApp').service('auctionService', AuctionService);
 
 }

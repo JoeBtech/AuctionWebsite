@@ -1,14 +1,14 @@
 ﻿namespace MyApp.Controllers {
 
     export class HomeController {
-        public movies;
+        public auctionItems;
 
         constructor
-        (
-            private movieService: MyApp.Services.MovieService,
+            (
+            private auctionService: MyApp.Services.AuctionService,
             private $location: angular.ILocationService
-        ) {
-            this.movies = this.movieService.listMovies();
+            ) {
+            this.auctionItems = this.auctionService.listItems();
         }
     }
 
@@ -16,4 +16,24 @@
     export class AboutController {
 
     }
+
+    export class AddPageController {
+
+    }
+
+    export class EditPageController {
+
+    }
+
+    export class DeletePageController {
+
+    }
+
+    export class ItemDetailsController {
+
+    }
+
+
+
+
 }
