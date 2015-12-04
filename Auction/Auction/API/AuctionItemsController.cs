@@ -17,7 +17,7 @@ namespace Auction.API {
             return items;
         }
 
-        public IHttpActionResult Post(AuctionItem item) {
+        public IHttpActionResult Post(AuctionItem item) {            
             if (!ModelState.IsValid) {
                 return BadRequest(this.ModelState);
             }

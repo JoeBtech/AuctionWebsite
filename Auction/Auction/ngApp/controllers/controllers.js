@@ -43,6 +43,29 @@ var MyApp;
             return EditPageController;
         })();
         Controllers.EditPageController = EditPageController;
+        var ItemDetailsController = (function () {
+            function ItemDetailsController(auctionService, $location, $routeParams) {
+                this.auctionService = auctionService;
+                this.$location = $location;
+                this.$routeParams = $routeParams;
+                this.itemToBid = auctionService.get($routeParams['id']);
+                //this.auctionItems = this.auctionService.listItems();
+            }
+            ItemDetailsController.prototype.save = function (userBid) {
+                var _this = this;
+                //debugger;
+                if (this.itemToBid.currentBid < this.userBid && this.userBid > this.itemToBid.minBid) {
+                    this.itemToBid.currentBid = this.userBid;
+                    this.auctionService.save(this.itemToBid)
+                        .then(function () { _this.$location.path('/itemDetails/' + _this.itemToBid.id); });
+                }
+                else {
+                    alert("Bid too low");
+                }
+            };
+            return ItemDetailsController;
+        })();
+        Controllers.ItemDetailsController = ItemDetailsController;
         var DeletePageController = (function () {
             function DeletePageController(auctionService, $location, $routeParams) {
                 this.auctionService = auctionService;
@@ -57,12 +80,6 @@ var MyApp;
             return DeletePageController;
         })();
         Controllers.DeletePageController = DeletePageController;
-        var ItemDetailsController = (function () {
-            function ItemDetailsController() {
-            }
-            return ItemDetailsController;
-        })();
-        Controllers.ItemDetailsController = ItemDetailsController;
     })(Controllers = MyApp.Controllers || (MyApp.Controllers = {}));
 })(MyApp || (MyApp = {}));
 //# sourceMappingURL=controllers.js.map

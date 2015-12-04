@@ -22,6 +22,8 @@ namespace Auction.Models {
                 original.Name = itemToSave.Name;
                 original.Description = itemToSave.Description;
                 original.MinBid = itemToSave.MinBid;
+                original.CurrentBid = itemToSave.CurrentBid;
+                original.NumOfBids = itemToSave.NumOfBids;
                 _db.SaveChanges();
             }
         }

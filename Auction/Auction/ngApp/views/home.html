@@ -1,9 +1,14 @@
 ﻿<ul>
     <li ng-repeat="auction in controller.auctionItems">
-        {{auction.name}} -- {{auction.description}}
+        <u>
+            {{auction.name}} -- {{auction.description}} -- <label>Minimum Bid: </label>{{auction.minBid}} -- <label>Current Bid: </label>{{auction.currentBid}}        
+        </u>
         <p>
+            <a href="/itemDetails/{{auction.id}}">Bid Items</a>
             <a href="/editPage/{{auction.id}}">Edit</a>
             <a href="/deletePage/{{auction.id}}">Delete</a>
         </p>
+
     </li>
 </ul>
+<a href="/addPage/">Add</a>

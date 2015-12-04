@@ -43,6 +43,32 @@
 
     }
 
+    export class ItemDetailsController {
+        public itemToBid;
+        public userBid;
+        public save(userBid) {
+            //debugger;
+            if (this.itemToBid.currentBid < this.userBid && this.userBid > this.itemToBid.minBid) {
+                this.itemToBid.currentBid = this.userBid;
+                this.auctionService.save(this.itemToBid)
+                    .then(() => { this.$location.path('/itemDetails/' + this.itemToBid.id) });
+            } else {
+            alert("Bid too low");
+
+            }
+        }
+        constructor(
+            private auctionService: MyApp.Services.AuctionService,
+            private $location: angular.ILocationService,
+            private $routeParams: ng.route.IRouteParamsService
+        ) {
+            this.itemToBid = auctionService.get($routeParams['id']);
+            //this.auctionItems = this.auctionService.listItems();
+
+        }
+
+    }
+
     export class DeletePageController {
         public itemToDelete;
 
@@ -57,12 +83,4 @@
             this.itemToDelete = auctionService.get($routeParams['id']);
         }
     }
-
-    export class ItemDetailsController {
-
-    }
-
-
-
-
 }

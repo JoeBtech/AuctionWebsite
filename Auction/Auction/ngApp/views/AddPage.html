@@ -1,1 +1,26 @@
-﻿
+﻿<h1>Welcome to the add page</h1>
+
+<form ng-submit="controller.save()">
+
+    <div>
+        <label>
+            Name:
+        </label>
+        <input ng-model="controller.newItem.name" />
+    </div>
+
+    <div>
+        <label>
+            Description:
+        </label>
+        <input ng-model="controller.newItem.description" />
+    </div>
+
+    <div>
+        <label>
+            Min Bid:
+        </label>
+        <input ng-model="controller.newItem.minBid" />
+    </div>
+    <input type="submit" value="Add" />
+</form>

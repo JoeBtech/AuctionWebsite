@@ -1,1 +1,22 @@
-﻿
+﻿<ul>
+    <!-- <li ng-repeat="auction in controller.itemToBid">-->
+    <li>
+        <u>
+            {{controller.itemToBid.name}} -- {{controller.itemToBid.description}} -- <label>Minimum Bid: </label>{{controller.itemToBid.minBid}} -- <label>Current Bid: </label>{{controller.itemToBid.currentBid}}
+        </u>
+    </li>
+</ul>
+
+<div>
+    <form ng-submit="controller.save()">
+        <label>
+            Your Bid:
+        </label>
+        <input ng-model="controller.userBid" />
+        <input type="submit" value="Bid" />
+    </form>
+</div>
+
+
+
+

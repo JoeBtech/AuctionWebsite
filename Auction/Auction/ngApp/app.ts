@@ -52,7 +52,7 @@
                 controller: MyApp.Controllers.DeletePageController,
                 controllerAs: 'controller'
             })
-            .when('/itemDetails', {
+            .when('/itemDetails/:id', {
                 templateUrl: '/ngApp/views/itemDetails.html',
                 controller: MyApp.Controllers.ItemDetailsController,
                 controllerAs: 'controller'
