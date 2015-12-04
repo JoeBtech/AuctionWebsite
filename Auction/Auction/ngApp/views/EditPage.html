@@ -1,1 +1,26 @@
-﻿
+﻿<h1>Welcome to the edit page</h1>
+
+<form ng-submit="controller.save()" >
+
+    <div>
+        <label>
+            Name:
+        </label>
+        <input ng-model="controller.itemToEdit.name" />
+    </div>
+
+    <div>
+        <label>
+            Description:
+        </label>
+        <input ng-model="controller.itemToEdit.description" />
+    </div>
+
+    <div>
+        <label>
+            Min Bid:
+        </label>
+        <input ng-model="controller.itemToEdit.minBid" />
+    </div>
+    <input type="submit" value="Save" />
+</form>

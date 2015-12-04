@@ -12,6 +12,12 @@ var MyApp;
             AuctionService.prototype.get = function (id) {
                 return this.AuctionResource.get({ id: id });
             };
+            AuctionService.prototype.save = function (item) {
+                return this.AuctionResource.save(item).$promise;
+            };
+            AuctionService.prototype.delete = function (item) {
+                return this.AuctionResource.delete({ id: item.id }).$promise;
+            };
             return AuctionService;
         })();
         Services.AuctionService = AuctionService;

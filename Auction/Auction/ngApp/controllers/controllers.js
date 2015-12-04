@@ -18,20 +18,42 @@ var MyApp;
         })();
         Controllers.AboutController = AboutController;
         var AddPageController = (function () {
-            function AddPageController() {
+            function AddPageController(auctionService, $location) {
+                this.auctionService = auctionService;
+                this.$location = $location;
             }
+            AddPageController.prototype.save = function () {
+                var _this = this;
+                this.auctionService.save(this.newItem).then(function () { _this.$location.path('/'); });
+            };
             return AddPageController;
         })();
         Controllers.AddPageController = AddPageController;
         var EditPageController = (function () {
-            function EditPageController() {
+            function EditPageController(auctionService, $location, $routeParams) {
+                this.auctionService = auctionService;
+                this.$location = $location;
+                this.$routeParams = $routeParams;
+                this.itemToEdit = auctionService.get($routeParams['id']);
             }
+            EditPageController.prototype.save = function () {
+                var _this = this;
+                this.auctionService.save(this.itemToEdit).then(function () { _this.$location.path('/'); });
+            };
             return EditPageController;
         })();
         Controllers.EditPageController = EditPageController;
         var DeletePageController = (function () {
-            function DeletePageController() {
+            function DeletePageController(auctionService, $location, $routeParams) {
+                this.auctionService = auctionService;
+                this.$location = $location;
+                this.$routeParams = $routeParams;
+                this.itemToDelete = auctionService.get($routeParams['id']);
             }
+            DeletePageController.prototype.delete = function () {
+                var _this = this;
+                this.auctionService.delete(this.itemToDelete).then(function () { _this.$location.path('/'); });
+            };
             return DeletePageController;
         })();
         Controllers.DeletePageController = DeletePageController;

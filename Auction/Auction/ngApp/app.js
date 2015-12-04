@@ -42,12 +42,12 @@ var MyApp;
             controller: MyApp.Controllers.AddPageController,
             controllerAs: 'controller'
         })
-            .when('/editPage', {
+            .when('/editPage/:id', {
             templateUrl: '/ngApp/views/editPage.html',
             controller: MyApp.Controllers.EditPageController,
             controllerAs: 'controller'
         })
-            .when('/deletePage', {
+            .when('/deletePage/:id', {
             templateUrl: '/ngApp/views/deletePage.html',
             controller: MyApp.Controllers.DeletePageController,
             controllerAs: 'controller'

@@ -8,11 +8,35 @@ using System.Web.Http;
 
 namespace Auction.API {
     public class AuctionItemsController : ApiController {
-        public IEnumerable<AuctionItem> Get() {
-            return new List<AuctionItem>
-            {
-                new AuctionItem {Id=1, Name="Something1", Description="Somethingaboutit", MinBid=0}
-            };
+        private IRepository _repo;
+        public AuctionItemsController(IRepository repo) {
+            this._repo = repo;
         }
+        public IEnumerable<AuctionItem> Get() {
+            var items = _repo.ListItems();
+            return items;
+        }
+
+        public IHttpActionResult Post(AuctionItem item) {
+            if (!ModelState.IsValid) {
+                return BadRequest(this.ModelState);
+            }
+            _repo.SaveItem(item);
+            return Created("", item);
+        }
+        public IHttpActionResult Delete(int id) {
+            _repo.Delete(id);
+            return Ok();
+        }
+
+        public IHttpActionResult Get(int id) {
+            var item = _repo.Find(id);
+            if (item == null) {
+                return NotFound();
+            }
+            return Ok(item);
+        }
+
+
     }
 }

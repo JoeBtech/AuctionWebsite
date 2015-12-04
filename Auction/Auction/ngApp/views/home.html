@@ -1,5 +1,9 @@
 ﻿<ul>
     <li ng-repeat="auction in controller.auctionItems">
         {{auction.name}} -- {{auction.description}}
+        <p>
+            <a href="/editPage/{{auction.id}}">Edit</a>
+            <a href="/deletePage/{{auction.id}}">Delete</a>
+        </p>
     </li>
 </ul>

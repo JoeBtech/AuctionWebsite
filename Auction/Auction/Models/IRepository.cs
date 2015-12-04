@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace Auction.Models {
-    interface IRepository {
+    public interface IRepository {
         void Delete(int id);
         AuctionItem Find(int id);
         IList<AuctionItem> ListItems();

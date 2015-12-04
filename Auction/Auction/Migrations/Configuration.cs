@@ -1,5 +1,6 @@
 namespace Auction.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,18 +15,26 @@ namespace Auction.Migrations
 
         protected override void Seed(Auction.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var items = new AuctionItem[] {
+                new AuctionItem {
+                    Name = "ChittyChittyBangBang",
+                    Description = "Some thing less than exciting",
+                    MinBid = 1200m
+                },
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                new AuctionItem {
+                    Name = "Batman",
+                    Description = "I'm Batman!!!",
+                    MinBid = 0m
+                },
+
+                new AuctionItem {
+                    Name = "Tesla",
+                    Description = "Sweet ride",
+                    MinBid = 120000m
+                }                
+            };
+            context.AuctionItems.AddOrUpdate(abox => abox.Name, items);
         }
     }
 }
