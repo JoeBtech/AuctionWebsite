@@ -235,29 +235,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512041833292_FirstMigration.cs" />
-    <Compile Include="Migrations\201512041833292_FirstMigration.Designer.cs">
-      <DependentUpon>201512041833292_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512041945264_SeedingData.cs" />
-    <Compile Include="Migrations\201512041945264_SeedingData.Designer.cs">
-      <DependentUpon>201512041945264_SeedingData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512041949530_FormUpdate.cs" />
-    <Compile Include="Migrations\201512041949530_FormUpdate.Designer.cs">
-      <DependentUpon>201512041949530_FormUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512042240251_FormUpdate1.cs" />
-    <Compile Include="Migrations\201512042240251_FormUpdate1.Designer.cs">
-      <DependentUpon>201512042240251_FormUpdate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512042313285_Claims.cs" />
-    <Compile Include="Migrations\201512042313285_Claims.Designer.cs">
-      <DependentUpon>201512042313285_Claims.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512042339404_Users.cs" />
-    <Compile Include="Migrations\201512042339404_Users.Designer.cs">
-      <DependentUpon>201512042339404_Users.cs</DependentUpon>
+    <Compile Include="Migrations\201512050025565_MigrationInit.cs" />
+    <Compile Include="Migrations\201512050025565_MigrationInit.Designer.cs">
+      <DependentUpon>201512050025565_MigrationInit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -273,6 +253,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Auction-20151020080840.mdf" />
+    <Content Include="App_Data\aspnet-Auction-20151020080840_log.ldf" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -352,9 +334,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -381,23 +361,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512041833292_FirstMigration.resx">
-      <DependentUpon>201512041833292_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512041945264_SeedingData.resx">
-      <DependentUpon>201512041945264_SeedingData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512041949530_FormUpdate.resx">
-      <DependentUpon>201512041949530_FormUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512042240251_FormUpdate1.resx">
-      <DependentUpon>201512042240251_FormUpdate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512042313285_Claims.resx">
-      <DependentUpon>201512042313285_Claims.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512042339404_Users.resx">
-      <DependentUpon>201512042339404_Users.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512050025565_MigrationInit.resx">
+      <DependentUpon>201512050025565_MigrationInit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

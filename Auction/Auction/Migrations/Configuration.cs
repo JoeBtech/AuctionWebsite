@@ -1,5 +1,4 @@
-namespace Auction.Migrations
-{
+namespace Auction.Migrations {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -9,15 +8,12 @@ namespace Auction.Migrations
     using System.Linq;
     using System.Security.Claims;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Auction.Models.ApplicationDbContext>
-    {
-        public Configuration()
-        {
+    internal sealed class Configuration : DbMigrationsConfiguration<Auction.Models.ApplicationDbContext> {
+        public Configuration() {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Auction.Models.ApplicationDbContext context)
-        {
+        protected override void Seed(Auction.Models.ApplicationDbContext context) {
             var items = new AuctionItem[] {
                 new AuctionItem {
                     Name = "ChittyChittyBangBang",
@@ -35,7 +31,7 @@ namespace Auction.Migrations
                     Name = "Tesla",
                     Description = "Sweet ride",
                     MinBid = 120000m
-                }                
+                }
             };
             context.AuctionItems.AddOrUpdate(abox => abox.Name, items);
 
@@ -52,7 +48,7 @@ namespace Auction.Migrations
                 userManager.AddClaim(user.Id, new Claim("CanBidPastMax", "true"));
             }
 
-        }    
+        }
 
     }
 }
